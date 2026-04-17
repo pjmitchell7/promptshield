@@ -1,0 +1,16 @@
+# Python cache and compiled junk
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Local environment files
+.env
+
+# Notebook leftovers
+.ipynb_checkpoints/
+
+# OS clutter
+.DS_Store

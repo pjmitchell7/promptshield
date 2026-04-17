@@ -1,0 +1,98 @@
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+
+from core.features import extract_features
+from core.model import PromptAnomalyModel
+from core.rules import run_rule_checks
+from core.scoring import combine_scores
+from core.tokenizer import TokenizerWrapper
+
+
+def load_prompts(file_path: str) -> list[str]:
+    path = Path(file_path)
+    if not path.exists():
+        raise FileNotFoundError(f"Prompt file not found: {file_path}")
+
+    raw_text = path.read_text(encoding="utf-8")
+
+    # If the file uses prompt separators, treat each block as one full prompt.
+    if "===PROMPT===" in raw_text:
+        chunks = [chunk.strip() for chunk in raw_text.split("===PROMPT===")]
+        return [chunk for chunk in chunks if chunk]
+
+    # Fallback so older one-line files still work for now.
+    lines = [line.strip() for line in raw_text.splitlines()]
+    return [line for line in lines if line]
+
+
+def build_feature_dicts(
+    prompts: list[str],
+    tokenizer: TokenizerWrapper,
+) -> list[dict[str, float]]:
+    feature_dicts = []
+    for prompt in prompts:
+        tokens = tokenizer.encode(prompt)
+        feature_dicts.append(extract_features(prompt, tokens))
+    return feature_dicts
+
+
+def train_model(benign_file: str) -> PromptAnomalyModel:
+    tokenizer = TokenizerWrapper()
+    benign_prompts = load_prompts(benign_file)
+    benign_features = build_feature_dicts(benign_prompts, tokenizer)
+
+    model = PromptAnomalyModel()
+    model.fit(benign_features)
+    return model
+
+
+def score_prompt(
+    prompt: str,
+    model: PromptAnomalyModel,
+    tokenizer: TokenizerWrapper,
+) -> dict[str, object]:
+    tokens = tokenizer.encode(prompt)
+    feature_dict = extract_features(prompt, tokens)
+    anomaly_score = model.anomaly_score(feature_dict)
+
+    rules = run_rule_checks(prompt)
+    combined = combine_scores(
+        anomaly_score=anomaly_score,
+        rule_count=rules["rule_count"],
+    )
+
+    return {
+        "prompt": prompt,
+        "tokens": tokens,
+        "features": feature_dict,
+        "rules": rules,
+        "scoring": combined,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="PromptShield v1 CLI")
+    parser.add_argument("--benign-file", default="data/prompts/benign.txt")
+    parser.add_argument("--prompt", help="Prompt string to score")
+    args = parser.parse_args()
+
+    if not args.prompt:
+        raise ValueError("Use --prompt to provide a prompt for scoring.")
+
+    tokenizer = TokenizerWrapper()
+    model = train_model(args.benign_file)
+    result = score_prompt(args.prompt, model, tokenizer)
+
+    print("\n=== PromptShield Result ===")
+    print(f"Prompt: {result['prompt']}")
+    print(f"Risk band: {result['scoring']['risk_band']}")
+    print(f"Combined score: {result['scoring']['combined_score']:.3f}")
+    print(f"Anomaly score: {result['scoring']['anomaly_score']:.3f}")
+    print(f"Rule hits: {result['rules']['rule_hits']}")
+    print(f"Features: {result['features']}")
+
+
+if __name__ == "__main__":
+    main()

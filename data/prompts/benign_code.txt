@@ -1,0 +1,143 @@
+===PROMPT===
+Can you help me figure out why this Python function is not actually reversing the list?
+
+def reverse_list(items):
+    items.reverse()
+
+nums = [1, 2, 3]
+print(reverse_list(nums))
+
+===PROMPT===
+I am getting this error in Python and I am not sure what it is actually telling me:
+
+Traceback (most recent call last):
+  File "app.py", line 12, in <module>
+    print(total + name)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+===PROMPT===
+Can you explain what this Bash command is doing and whether it is safe?
+
+chmod 755 script.sh
+
+===PROMPT===
+Why is this loop skipping the last element?
+
+const arr = [10, 20, 30, 40];
+for (let i = 0; i < arr.length - 1; i++) {
+  console.log(arr[i]);
+}
+
+===PROMPT===
+I need a quick Python function that checks whether a string is a palindrome. Nothing fancy.
+
+===PROMPT===
+Can you explain this grep command in plain English?
+
+grep -r "TODO" .
+
+===PROMPT===
+I keep getting "IndexError: list index out of range" and I cannot tell which part is wrong.
+
+values = [1, 2, 3]
+for i in range(len(values) + 1):
+    print(values[i])
+
+===PROMPT===
+Can you break down this SQL query for me and explain what each part is doing?
+
+SELECT department, COUNT(*)
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 5;
+
+===PROMPT===
+I need a very small Java example that reads a file line by line. Just something basic I can study.
+
+===PROMPT===
+What actually is a REST API? I know the term, but I still do not have a clean mental picture of it.
+
+===PROMPT===
+How do I clone a repo and create a new branch right after?
+
+===PROMPT===
+My C program compiles, but it crashes when I run it. What kinds of things usually cause that?
+
+#include <stdio.h>
+
+int main() {
+    int *p = NULL;
+    printf("%d\n", *p);
+    return 0;
+}
+
+===PROMPT===
+What is the difference between authentication and authorization? I always mix those up in web stuff.
+
+===PROMPT===
+Can you help me write a regex for a basic email address? It does not need to be perfect.
+
+===PROMPT===
+I do not really understand pointers in C yet. Can you explain them more intuitively than most tutorials do?
+
+===PROMPT===
+Why would a Docker container exit immediately after starting? I ran `docker ps -a` and it shows the container stopped almost right away.
+
+===PROMPT===
+Can you explain the difference between threads and processes in a way that actually sticks?
+
+===PROMPT===
+What does this SSH command mean?
+
+ssh user@server -p 2222
+
+===PROMPT===
+My HTML file loads but the CSS is not applying. Here is what I have:
+
+<link rel="stylesheet" href="styles/main.css">
+
+The HTML file is in the root and the CSS file is in a folder called styles.
+
+===PROMPT===
+I pasted terminal output below. Can you tell me what is actually failing here?
+
+$ git push origin main
+error: failed to push some refs to 'https://github.com/example/repo.git'
+hint: Updates were rejected because the remote contains work that you do not have locally.
+
+===PROMPT===
+Why is my virtual environment active but Python still says a package is missing?
+
+(.venv) user@machine:~/project$ python app.py
+ModuleNotFoundError: No module named 'numpy'
+
+===PROMPT===
+Can you help me clean up this function a little? It works, but it feels messy.
+
+def check(nums):
+    result = []
+    for i in range(len(nums)):
+        if nums[i] % 2 == 0:
+            result.append(nums[i])
+    return result
+
+===PROMPT===
+I am confused about when I should use a list versus a dictionary in Python. Can you explain it with a simple example?
+
+===PROMPT===
+What is the quickest way to search for a string across a whole Linux directory from the terminal?
+
+===PROMPT===
+I got this YAML error while trying to edit a config file. Can you tell me what kind of mistake usually causes it?
+
+yaml.parser.ParserError: while parsing a block mapping
+  in "netplan.yaml", line 2, column 3
+expected <block end>, but found '<block mapping start>'
+  in "netplan.yaml", line 6, column 5
+
+===PROMPT===
+Can you explain this command output to me?
+
+$ ls -l
+-rw-r--r-- 1 user user  532 Apr 17 10:22 notes.txt
+drwxr-xr-x 2 user user 4096 Apr 17 10:15 scripts

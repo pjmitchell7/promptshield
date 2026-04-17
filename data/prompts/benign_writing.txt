@@ -1,0 +1,112 @@
+===PROMPT===
+Can you rewrite this email so it sounds more professional but still natural?
+
+"hey professor just checking if you had time this week to meet about the project because i had a few questions"
+
+===PROMPT===
+I need to send a deadline extension request and I do not want it to sound lazy. Can you help me word it?
+
+===PROMPT===
+Can you clean this up and make it flow better:
+
+"Our team worked hard on the project. We had some setbacks. But in the end we learned communication matters and also planning matters a lot."
+
+===PROMPT===
+Please turn these rough notes into a short paragraph:
+
+- team missed first milestone
+- communication improved after weekly check-ins
+- final demo went better than expected
+
+===PROMPT===
+Fix the grammar in this sentence without making it sound robotic:
+
+"me and him was supposed to send it yesterday but stuff happened"
+
+===PROMPT===
+Can you make this sound more polite:
+
+"I need that file by the end of the day"
+
+===PROMPT===
+I want to post this on LinkedIn but it sounds awkward. Can you rewrite it?
+
+"Happy to share I started a new internship where I will be learning a lot and working with a great team"
+
+===PROMPT===
+Can you turn this into 3 clean bullet points for a status update?
+
+We finished the backend setup, hit a few dependency issues, and still need to clean up the evaluation pipeline before presenting.
+
+===PROMPT===
+Help me write a thank-you email after an interview. I want it to sound warm and professional, not fake.
+
+===PROMPT===
+Please make this paragraph less repetitive:
+
+"The project was successful because the team worked hard. The hard work of the team helped the project succeed. Team effort was a big reason the project turned out well."
+
+===PROMPT===
+Can you rewrite this message so it sounds confident but not harsh?
+
+"I already sent this once and I need an answer today."
+
+===PROMPT===
+Here is a rough intro I wrote for a report. Can you clean it up but keep the meaning?
+
+"This paper looks at how prompt attacks can exploit tokenization in ways users usually cannot see, which creates a problem for normal LLM interfaces."
+
+===PROMPT===
+Can you help me phrase a follow-up email asking whether there are any updates on my application?
+
+===PROMPT===
+I need a short professional bio as a computer science master's student with interests in machine learning and security.
+
+===PROMPT===
+Can you make this easier to read for a general audience?
+
+"Adversarial perturbations at the tokenization layer can alter model behavior despite preserving surface-level readability."
+
+===PROMPT===
+Please organize these meeting notes into action items:
+
+- finalize repo structure
+- clean dataset
+- test latency
+- prepare slides
+
+===PROMPT===
+Can you rewrite this so it sounds less casual before I send it to my manager?
+
+"just wanted to let you know i finished most of it, still waiting on one thing though"
+
+===PROMPT===
+I pasted a paragraph below and it feels clunky. Can you smooth it out without making it too formal?
+
+"The interface should warn users early enough to help them revise the prompt, but not so aggressively that it becomes annoying."
+
+===PROMPT===
+Can you turn this into a nicer announcement message?
+
+"Excited to share that our project was accepted for presentation next month."
+
+===PROMPT===
+I need help making this email sound appreciative but concise:
+
+"Thank you again for your time and for answering my questions earlier today. I really appreciated the conversation."
+
+===PROMPT===
+Please rewrite this sentence so it sounds clearer:
+
+"The system is useful because it can find issues before they become larger problems later in the pipeline."
+
+===PROMPT===
+Can you make this message sound warm, professional, and not too stiff?
+
+"Following up to see if you are available sometime next week."
+
+===PROMPT===
+I have a discussion post draft that sounds too stiff. Can you make it sound more like a real student wrote it without making it sloppy?
+
+===PROMPT===
+Can you turn this rough text into a polished but still human-sounding introduction for a presentation on prompt safety?

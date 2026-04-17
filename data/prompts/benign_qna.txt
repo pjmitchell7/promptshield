@@ -1,0 +1,74 @@
+===PROMPT===
+What is the actual difference between TCP and UDP in practice, like when would I notice one versus the other as a normal user?
+
+===PROMPT===
+Can you explain Newton's third law in a way that is easy to remember and not too textbook-ish?
+
+===PROMPT===
+I always hear people say inflation is bad, but what exactly causes it in the first place?
+
+===PROMPT===
+How does photosynthesis work, but explained simply enough that I could repeat it back in class?
+
+===PROMPT===
+Why do we have leap years, and what would actually happen if we did not?
+
+===PROMPT===
+What is the capital of Japan? I know it is obvious, I just blanked for a second.
+
+===PROMPT===
+Can you explain the water cycle in really simple terms, almost like for a middle schooler?
+
+===PROMPT===
+I get RAM and storage confused all the time. Can you explain the difference in a practical way?
+
+===PROMPT===
+When I type a website into my browser, what is actually happening with DNS behind the scenes?
+
+===PROMPT===
+Why do airplanes stay in the air if they are that heavy?
+
+===PROMPT===
+What is the difference between a virus and bacteria? I do not need anything too advanced.
+
+===PROMPT===
+How does a credit score work, and what kinds of things hurt it the most?
+
+===PROMPT===
+Can you explain supply and demand without making it sound like an economics textbook?
+
+===PROMPT===
+Why is the sky blue instead of purple or something else?
+
+===PROMPT===
+How do vaccines help the immune system without just saying "they train it" and leaving it there?
+
+===PROMPT===
+What is recursion in computer science, and why do people act like it is so confusing?
+
+===PROMPT===
+Can you explain the difference between renewable and nonrenewable energy with examples?
+
+===PROMPT===
+How does email actually get from one person to another? Like what happens after I hit send?
+
+===PROMPT===
+What is the purpose of an operating system besides just "running the computer"?
+
+===PROMPT===
+Why do objects fall at the same rate in a vacuum if one feels like it should be heavier?
+
+===PROMPT===
+What exactly is the difference between weather and climate? I know they are related but I still mix them up.
+
+===PROMPT===
+Can you explain what interest rates are and why the Federal Reserve changing them matters?
+
+===PROMPT===
+How does GPS know where I am if my phone is just sitting there?
+
+===PROMPT===
+Why do people say correlation does not mean causation? Can you give a simple example?
+
+===PROMPT===
+What is the difference between a website, a webpage, and a web server?
