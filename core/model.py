@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 import json
 from pathlib import Path
 
@@ -9,8 +10,8 @@ from core.features import feature_names
 
 
 class PromptAnomalyModel:
-    # Isolation Forest is the locked v1 anomaly model.
-    # It is lightweight, unsupervised, and enough to get the backbone working.
+    # Isolation Forest is still the right v1 model.
+    # The problem now is not model choice. It is better calibration and arbitration.
     def __init__(self, random_state: int = 42) -> None:
         self.random_state = random_state
         self.model = IsolationForest(
@@ -22,7 +23,6 @@ class PromptAnomalyModel:
         self._is_fit = False
 
     def dicts_to_matrix(self, feature_dicts: list[dict[str, float]]) -> np.ndarray:
-        # This converts feature dictionaries into a stable numeric matrix.
         rows = []
         for feature_dict in feature_dicts:
             rows.append([feature_dict[name] for name in self._feature_names])
@@ -39,14 +39,29 @@ class PromptAnomalyModel:
 
         X = self.dicts_to_matrix([feature_dict])
 
-        # decision_function gives higher values for more normal points.
-        # I am flipping the sign so higher means more suspicious.
+        # sklearn's decision_function is higher for more normal points.
+        # I flip the sign so higher means more suspicious in PromptShield terms.
         raw_score = self.model.decision_function(X)[0]
-
         return float(-raw_score)
 
+    def anomaly_scores(self, feature_dicts: list[dict[str, float]]) -> list[float]:
+        if not self._is_fit:
+            raise RuntimeError("Model must be fit before scoring.")
+
+        X = self.dicts_to_matrix(feature_dicts)
+        raw_scores = self.model.decision_function(X)
+        return [float(-score) for score in raw_scores]
+
+    def calibrate_thresholds(self, benign_feature_dicts: list[dict[str, float]]) -> dict[str, float]:
+        scores = np.array(self.anomaly_scores(benign_feature_dicts), dtype=float)
+
+        return {
+            "p90": float(np.percentile(scores, 90)),
+            "p95": float(np.percentile(scores, 95)),
+            "p99": float(np.percentile(scores, 99)),
+        }
+
     def save_metadata(self, output_path: str) -> None:
-        # This is just a small helper so the run setup can be documented later.
         metadata = {
             "feature_names": self._feature_names,
             "random_state": self.random_state,
