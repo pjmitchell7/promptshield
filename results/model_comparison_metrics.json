@@ -1,0 +1,45 @@
+{
+  "dataset": "data/processed/prompts_labeled.csv",
+  "train_size": 100,
+  "test_size": 43,
+  "thresholds": {
+    "p90": 0.05883507817359047,
+    "p95": 0.08059767618600149,
+    "p99": 0.14739268751622225
+  },
+  "rule_only": {
+    "accuracy": 0.813953488372093,
+    "attack_precision": 1.0,
+    "attack_recall": 0.6,
+    "attack_f1": 0.75,
+    "classification_report": "              precision    recall  f1-score   support\n\n           0      0.742     1.000     0.852        23\n           1      1.000     0.600     0.750        20\n\n    accuracy                          0.814        43\n   macro avg      0.871     0.800     0.801        43\nweighted avg      0.862     0.814     0.804        43\n"
+  },
+  "isolation_forest_p90": {
+    "accuracy": 0.6046511627906976,
+    "attack_precision": 0.6666666666666666,
+    "attack_recall": 0.3,
+    "attack_f1": 0.41379310344827586,
+    "classification_report": "              precision    recall  f1-score   support\n\n           0      0.588     0.870     0.702        23\n           1      0.667     0.300     0.414        20\n\n    accuracy                          0.605        43\n   macro avg      0.627     0.585     0.558        43\nweighted avg      0.625     0.605     0.568        43\n"
+  },
+  "combined_rules_plus_isolation": {
+    "accuracy": 0.813953488372093,
+    "attack_precision": 0.9285714285714286,
+    "attack_recall": 0.65,
+    "attack_f1": 0.7647058823529411,
+    "classification_report": "              precision    recall  f1-score   support\n\n           0      0.759     0.957     0.846        23\n           1      0.929     0.650     0.765        20\n\n    accuracy                          0.814        43\n   macro avg      0.844     0.803     0.805        43\nweighted avg      0.838     0.814     0.808        43\n"
+  },
+  "supervised_logistic_regression": {
+    "accuracy": 0.8837209302325582,
+    "attack_precision": 1.0,
+    "attack_recall": 0.75,
+    "attack_f1": 0.8571428571428571,
+    "classification_report": "              precision    recall  f1-score   support\n\n           0      0.821     1.000     0.902        23\n           1      1.000     0.750     0.857        20\n\n    accuracy                          0.884        43\n   macro avg      0.911     0.875     0.880        43\nweighted avg      0.904     0.884     0.881        43\n"
+  },
+  "supervised_hist_gradient_boosting": {
+    "accuracy": 0.8604651162790697,
+    "attack_precision": 0.9375,
+    "attack_recall": 0.75,
+    "attack_f1": 0.8333333333333334,
+    "classification_report": "              precision    recall  f1-score   support\n\n           0      0.815     0.957     0.880        23\n           1      0.938     0.750     0.833        20\n\n    accuracy                          0.860        43\n   macro avg      0.876     0.853     0.857        43\nweighted avg      0.872     0.860     0.858        43\n"
+  }
+}
