@@ -44,6 +44,18 @@ DATASET_SOURCES = [
         "source_split": "perturbed",
         "category": "perturbed_or_obfuscated",
     },
+    {
+        "path": "data/prompts/expanded_benign.txt",
+        "label": 0,
+        "source_split": "expanded_benign",
+        "category": "expanded_benign_systems_and_security",
+    },
+    {
+        "path": "data/prompts/expanded_adversarial.txt",
+        "label": 1,
+        "source_split": "expanded_adversarial",
+        "category": "expanded_prompt_injection",
+    },
 ]
 
 

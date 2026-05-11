@@ -1,5 +1,5 @@
 {
-  "best_model_type": "logistic_regression",
+  "best_model_type": "hist_gradient_boosting",
   "dataset": "data/processed/prompts_labeled.csv",
   "feature_names": [
     "num_tokens",
@@ -28,42 +28,42 @@
   ],
   "all_metrics": [
     {
-      "accuracy": 0.8837209302325582,
-      "attack_precision": 1.0,
-      "attack_recall": 0.75,
-      "attack_f1": 0.8571428571428571,
+      "accuracy": 0.7368421052631579,
+      "attack_precision": 0.9444444444444444,
+      "attack_recall": 0.5483870967741935,
+      "attack_f1": 0.6938775510204082,
       "model_type": "logistic_regression",
-      "train_size": 100,
-      "test_size": 43,
-      "classification_report": "              precision    recall  f1-score   support\n\n           0      0.821     1.000     0.902        23\n           1      1.000     0.750     0.857        20\n\n    accuracy                          0.884        43\n   macro avg      0.911     0.875     0.880        43\nweighted avg      0.904     0.884     0.881        43\n",
+      "train_size": 264,
+      "test_size": 114,
+      "classification_report": "              precision    recall  f1-score   support\n\n           0      0.641     0.962     0.769        52\n           1      0.944     0.548     0.694        62\n\n    accuracy                          0.737       114\n   macro avg      0.793     0.755     0.732       114\nweighted avg      0.806     0.737     0.728       114\n",
       "confusion_matrix": [
         [
-          23,
-          0
+          50,
+          2
         ],
         [
-          5,
-          15
+          28,
+          34
         ]
       ]
     },
     {
-      "accuracy": 0.8604651162790697,
-      "attack_precision": 0.9375,
-      "attack_recall": 0.75,
-      "attack_f1": 0.8333333333333334,
+      "accuracy": 0.7543859649122807,
+      "attack_precision": 0.84,
+      "attack_recall": 0.6774193548387096,
+      "attack_f1": 0.75,
       "model_type": "hist_gradient_boosting",
-      "train_size": 100,
-      "test_size": 43,
-      "classification_report": "              precision    recall  f1-score   support\n\n           0      0.815     0.957     0.880        23\n           1      0.938     0.750     0.833        20\n\n    accuracy                          0.860        43\n   macro avg      0.876     0.853     0.857        43\nweighted avg      0.872     0.860     0.858        43\n",
+      "train_size": 264,
+      "test_size": 114,
+      "classification_report": "              precision    recall  f1-score   support\n\n           0      0.688     0.846     0.759        52\n           1      0.840     0.677     0.750        62\n\n    accuracy                          0.754       114\n   macro avg      0.764     0.762     0.754       114\nweighted avg      0.770     0.754     0.754       114\n",
       "confusion_matrix": [
         [
-          22,
-          1
+          44,
+          8
         ],
         [
-          5,
-          15
+          20,
+          42
         ]
       ]
     }
