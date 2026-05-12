@@ -1,0 +1,18 @@
+{
+  "model_type": "isolation_forest",
+  "encoding_name": "cl100k_base",
+  "benign_file": "data/prompts/benign.txt",
+  "num_training_prompts": 75,
+  "feature_names": [
+    "num_tokens",
+    "token_id_range",
+    "mean_token_id",
+    "std_token_id",
+    "high_token_ratio",
+    "repeated_token_ratio",
+    "char_to_token_ratio",
+    "non_ascii_ratio",
+    "zero_width_count",
+    "homoglyph_count"
+  ]
+}

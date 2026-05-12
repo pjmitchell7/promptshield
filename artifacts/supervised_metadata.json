@@ -1,0 +1,71 @@
+{
+  "best_model_type": "hist_gradient_boosting",
+  "dataset": "data/processed/prompts_labeled.csv",
+  "feature_names": [
+    "num_tokens",
+    "token_id_range",
+    "mean_token_id",
+    "std_token_id",
+    "high_token_ratio",
+    "repeated_token_ratio",
+    "char_to_token_ratio",
+    "non_ascii_ratio",
+    "zero_width_count",
+    "homoglyph_count",
+    "rule_count",
+    "strong_rule_count",
+    "artifact_rule_count",
+    "rule_category_count",
+    "rule_hit__base64_like_substring",
+    "rule_hit__delimiter_spoof",
+    "rule_hit__hex_like_substring",
+    "rule_hit__hidden_channel_spoof",
+    "rule_hit__hidden_prompt_extraction",
+    "rule_hit__override_intent",
+    "rule_hit__payload_like_pattern",
+    "rule_hit__structural_spoof",
+    "rule_hit__zero_width_chars"
+  ],
+  "all_metrics": [
+    {
+      "accuracy": 0.7368421052631579,
+      "attack_precision": 0.9444444444444444,
+      "attack_recall": 0.5483870967741935,
+      "attack_f1": 0.6938775510204082,
+      "model_type": "logistic_regression",
+      "train_size": 264,
+      "test_size": 114,
+      "classification_report": "              precision    recall  f1-score   support\n\n           0      0.641     0.962     0.769        52\n           1      0.944     0.548     0.694        62\n\n    accuracy                          0.737       114\n   macro avg      0.793     0.755     0.732       114\nweighted avg      0.806     0.737     0.728       114\n",
+      "confusion_matrix": [
+        [
+          50,
+          2
+        ],
+        [
+          28,
+          34
+        ]
+      ]
+    },
+    {
+      "accuracy": 0.7543859649122807,
+      "attack_precision": 0.84,
+      "attack_recall": 0.6774193548387096,
+      "attack_f1": 0.75,
+      "model_type": "hist_gradient_boosting",
+      "train_size": 264,
+      "test_size": 114,
+      "classification_report": "              precision    recall  f1-score   support\n\n           0      0.688     0.846     0.759        52\n           1      0.840     0.677     0.750        62\n\n    accuracy                          0.754       114\n   macro avg      0.764     0.762     0.754       114\nweighted avg      0.770     0.754     0.754       114\n",
+      "confusion_matrix": [
+        [
+          44,
+          8
+        ],
+        [
+          20,
+          42
+        ]
+      ]
+    }
+  ]
+}
